@@ -1,0 +1,9 @@
+{{ if .installVSCode -}}
+# === VSCode ===
+winget install --id Microsoft.VisualStudioCode --accept-source-agreements --accept-package-agreements
+{{ end -}}
+
+{{ if .installRclone -}}
+# === rclone ===
+winget install --id Rclone.Rclone --accept-source-agreements --accept-package-agreements
+{{ end -}}

@@ -1,0 +1,10 @@
+{{- $installVSCode := promptBoolOnce . "installVSCode" "Install VSCode? (y/n)" -}}
+{{- $installRclone := promptBoolOnce . "installRclone" "Install rclone? (y/n)" -}}
+
+encryption: age
+age:
+  passphrase: true
+
+data:
+  installVSCode: {{ $installVSCode }}
+  installRclone: {{ $installRclone }}

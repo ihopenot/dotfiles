@@ -1,0 +1,7 @@
+{{ if not .installVSCode }}
+AppData/Roaming/Code/**
+{{ end }}
+
+{{ if not .installRclone }}
+.config/rclone/**
+{{ end }}
