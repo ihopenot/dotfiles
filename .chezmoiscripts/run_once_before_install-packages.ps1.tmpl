@@ -6,4 +6,8 @@ winget install --id Microsoft.VisualStudioCode --accept-source-agreements --acce
 {{ if .installRclone -}}
 # === rclone ===
 winget install --id Rclone.Rclone --accept-source-agreements --accept-package-agreements
+{{ if eq .chezmoi.os "windows" -}}
+# === WinFsp (rclone mount dependency) ===
+winget install --id WinFsp.WinFsp --accept-source-agreements --accept-package-agreements
+{{ end -}}
 {{ end -}}
