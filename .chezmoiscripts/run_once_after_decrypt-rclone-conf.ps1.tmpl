@@ -1,0 +1,9 @@
+# Refresh PATH to find newly installed tools
+$machineEnv = [System.Environment]::GetEnvironmentVariable("Path", "Machine")
+$userEnv = [System.Environment]::GetEnvironmentVariable("Path", "User")
+$env:Path = "$machineEnv;$userEnv"
+
+{{ if .installRclone -}}
+# Decrypt rclone.conf after deployment
+rclone config encryption remove
+{{ end -}}
